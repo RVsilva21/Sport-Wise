@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useState } from 'react';
+import UserForm from './components/UserForm';
+import UserList from './components/UserList';
 
-function App() {
+const App = () => {
+  const [users, setUsers] = useState([]);
+  const [currentUser, setCurrentUser] = useState(null);
+
+  const handleCreate = (user) => {
+    setUsers([...users, user]);
+  };
+
+  const handleUpdate = (user) => {
+    const updatedUsers = users.map((u) => (u === currentUser ? user : u));
+    setUsers(updatedUsers);
+    setCurrentUser(null);
+  };
+
+  const handleDelete = (index) => {
+    const updatedUsers = users.filter((_, i) => i !== index);
+    setUsers(updatedUsers);
+  };
+
+  const handleEdit = (user) => {
+    setCurrentUser(user);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Edição de Usuaários</h1>
+      <UserForm onSubmit={currentUser ? handleUpdate : handleCreate} initialData={currentUser} />
+      <UserList users={users} onEdit={handleEdit} onDelete={handleDelete} />
     </div>
   );
-}
+};
 
 export default App;
