@@ -1,0 +1,29 @@
+/* src/components/UserManagement/UserManagement.css */
+.message {
+    color: green;
+    margin: 10px 0;
+  }
+  
+  form {
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"], input[type="email"], select {
+    padding: 8px;
+    margin: 5px 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  button {
+    padding: 8px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  

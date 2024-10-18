@@ -1,0 +1,18 @@
+/* src/components/UserManagement/UserList.css */
+.user-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .user-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .user-item button {
+    margin-left: 10px;
+    padding: 5px;
+  }
+  
