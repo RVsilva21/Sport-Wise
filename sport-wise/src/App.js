@@ -28,7 +28,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Edição de Usuaários</h1>
+      <h1>Edição de Usuários</h1>
       <UserForm onSubmit={currentUser ? handleUpdate : handleCreate} initialData={currentUser} />
       <UserList users={users} onEdit={handleEdit} onDelete={handleDelete} />
     </div>
